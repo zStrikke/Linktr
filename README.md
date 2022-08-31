@@ -1,4 +1,4 @@
-Description of the video: (OBVIOUSLY NOT ME)
+Description of the video: (OBVIOUSLY NOT ME) https://www.youtube.com/watch?v=30qk04BG9G4&t=5s
 
 In my longest video yet at just under 1 hour, I'll show you how to create a basic Linktree (https://linktr.ee) clone from scratch in Laravel. This tutorial is meant for beginners in the PHP framework, or who might have a bit of experience and want to see an example project from start to finish.
 
