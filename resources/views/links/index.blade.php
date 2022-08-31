@@ -23,7 +23,7 @@
                                     <td><a href="{{ $link->link }}">{{ $link->link }}</a></td>
                                     <td>0</td>
                                     <td>Aug 3, 2020 - 12:30</td>
-                                    <td><a href="/dashboard/links/"{{ $link->id }}>Edit</a></td>
+                                    <td><a href="/dashboard/links/{{ $link->id }}">Edit</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
