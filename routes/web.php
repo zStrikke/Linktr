@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // linktr.test/dashboard
+Auth::routes();
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::get('/links', 'LinkController@index');
     Route::get('/links/new', 'LinkController@create');
@@ -32,6 +34,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::post('/settings', 'UserController@update');
     
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/visit/{link}', 'VisitController@store');
 Route::get('/{user}', 'UserController@show');
