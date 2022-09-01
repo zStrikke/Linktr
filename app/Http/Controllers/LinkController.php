@@ -12,6 +12,8 @@ class LinkController extends Controller
     {
         // Working from a parent model down:
         $links = Auth::user()->links()
+            ->withCount('visits')
+            ->with('latest_visits')
             ->get();
 
         return view('links.index', [
