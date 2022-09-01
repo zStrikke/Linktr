@@ -20,7 +20,7 @@ class Link extends Model
 
     public function last_visit()
     {
-        return $this->hasOne(Visit::class)->latest();
+        return $this->hasOne(Visit::class)->latest(); 
     }
 
 }
