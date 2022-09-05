@@ -37297,6 +37297,22 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    axios = _require["default"];
+
+$('.user-link').click(function (e) {
+  var linkId = $(this).data('link-id');
+  var linkUrl = $(this).attr('href'); // store the visit asynchronously without interrupting the link opening
+
+  axios.post('/visit/' + linkId, {
+    link: linkUrl
+  }).then(function (response) {
+    return console.log('response: ', response);
+  })["catch"](function (error) {
+    return console.error('error: ', error);
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
