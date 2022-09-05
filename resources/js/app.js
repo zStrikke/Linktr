@@ -1,16 +1,16 @@
-const { default: Axios } = require('axios');
 
 require('./bootstrap');
 
-$('user-link').click(function(e) {
+const { default: axios } = require('axios');
 
-    let linkId = ;
-    let linkUrl = $(this);
-    // store the visit asynchronously withour interru
-    pting the link opening
-    Axios.post('/visi/' + linkId, data: {
+$('.user-link').click(function(e) {
+
+    let linkId = $(this).data('link-id');
+    let linkUrl = $(this).attr('href' );
+    // store the visit asynchronously without interrupting the link opening
+    axios.post('/visit/' + linkId,  {
         link: linkUrl
     })
     .then(response => console.log('response: ', response))
     .catch(error => console.error('error: ', error));
-})
+});
